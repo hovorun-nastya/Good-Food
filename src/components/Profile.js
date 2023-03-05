@@ -10,12 +10,10 @@ const Profile = () => {
 
     return (
         isAuthenticated ?
-            <article>
+            <article style={{justifyContent: "center"}}>
                 {user?.picture && <img src={user.picture} alt={user?.name}/>}
                 <h2>{user.name}</h2>
-                <ul>
-                    {Object.keys(user).map((objKey, i) => <li key={i}>{objKey}: {user[objKey]}</li>)}
-                </ul>
+                <h3>{user.email}</h3>
             </article>
             : <>
                 <Modal
